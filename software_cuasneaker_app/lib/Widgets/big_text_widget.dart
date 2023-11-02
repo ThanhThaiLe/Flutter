@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:software_cuasneaker_app/Utils/dimensions.types.dart';
 
 class BigTextWidgets extends StatelessWidget {
   final String text;

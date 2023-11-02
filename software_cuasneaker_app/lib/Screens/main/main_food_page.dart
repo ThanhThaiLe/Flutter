@@ -14,9 +14,11 @@ class MainFoodPage extends StatefulWidget {
 class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
+    print("Current height is ${MediaQuery.of(context).size.height}");
     return Scaffold(
         body: Column(
       children: [
+        // showing the header
         Container(
           child: Container(
             padding: const EdgeInsets.only(left: 20, right: 20),
@@ -57,6 +59,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
             ),
           ),
         ),
+        //showing the body
         const FoodPageBody()
       ],
     ));
