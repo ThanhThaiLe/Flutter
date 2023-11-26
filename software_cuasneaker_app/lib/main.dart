@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:software_cuasneaker_app/Screens/detail/product_detail.dart';
 import 'package:software_cuasneaker_app/Screens/main/main_food_page.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MainFoodPage(),
+      home: const ProductDetail(),
     );
   }
 }

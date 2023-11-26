@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:software_cuasneaker_app/Screens/detail/product_detail.dart';
 import 'package:software_cuasneaker_app/Screens/main/food_page_body.dart';
 import 'package:software_cuasneaker_app/Utils/colors.dart';
+import 'package:software_cuasneaker_app/Utils/dimensions.types.dart';
 import 'package:software_cuasneaker_app/Widgets/big_text_widget.dart';
 import 'package:software_cuasneaker_app/Widgets/small_text_widget.dart';
 
@@ -15,14 +17,17 @@ class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
     print("Current height is ${MediaQuery.of(context).size.height}");
+    print("Current width is ${MediaQuery.of(context).size.width}");
     return Scaffold(
         body: Column(
       children: [
         // showing the header
         Container(
           child: Container(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            margin: const EdgeInsets.only(top: 25, bottom: 15),
+            padding: EdgeInsets.only(
+                left: Dimensions.width20, right: Dimensions.width20),
+            margin: EdgeInsets.only(
+                top: Dimensions.height25, bottom: Dimensions.height15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -44,14 +49,16 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 ),
                 Center(
                   child: Container(
-                    width: 45,
-                    height: 45,
+                    width: Dimensions.height45,
+                    height: Dimensions.height45,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius15),
                         color: AppColors.mainColor),
-                    child: const Icon(
+                    child: Icon(
                       Icons.search,
                       color: Colors.white,
+                      size: Dimensions.iconSize30,
                     ),
                   ),
                 )
@@ -60,7 +67,10 @@ class _MainFoodPageState extends State<MainFoodPage> {
           ),
         ),
         //showing the body
-        const FoodPageBody()
+        const Expanded(
+            child: SingleChildScrollView(
+          child: FoodPageBody(),
+        ))
       ],
     ));
   }
